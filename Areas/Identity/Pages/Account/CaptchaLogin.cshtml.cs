@@ -101,6 +101,15 @@ namespace aspapp.Areas.Identity.Pages.Account
             if (result.Succeeded)
             {
                 _logger.LogInformation("Użytkownik zalogowany.");
+
+                var now = DateTime.UtcNow;
+
+                if (user != null)
+                {
+                    user.LastActivity = now;
+                    await _userManager.UpdateAsync(user);
+                }
+
                 return LocalRedirect(returnUrl);
             }
 

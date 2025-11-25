@@ -5,3 +5,5 @@ Migrations/
 Logs/
 moje.txt
 .env
+CanaryTokens.txt
+images/

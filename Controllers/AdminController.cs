@@ -633,5 +633,11 @@ namespace aspapp.Controllers
             return File(System.IO.File.ReadAllBytes(fullPath), "application/octet-stream", fileName);
         }
 
+        [HttpGet("FakeEndpoint")]
+        public async Task<IActionResult> FakeEndpoint()
+        {
+            return View();
+        }
+
     }
 }
